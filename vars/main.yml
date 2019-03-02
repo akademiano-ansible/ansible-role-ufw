@@ -1,2 +1,4 @@
 ---
 # vars file for router
+ufw_packages:
+  - ufw
