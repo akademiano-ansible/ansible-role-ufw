@@ -1,2 +1,5 @@
 ---
 # defaults file for router
+ufw_default_incoming: deny
+ufw_default_outgoing: allow
+ufw_default_routed: deny

@@ -8,8 +8,19 @@
     proto: tcp
   notify: reload ufw
 
-- name: Enable ufw and deny all
+- name: Set default in
+  command: "ufw default {{ufw_default_incoming}} incoming"
+  become: yes
+
+- name: Set default out
+  command: "ufw default {{ufw_default_outgoing}} outgoing"
+  become: yes
+
+- name: Set default routed
+  command: "ufw default {{ufw_default_routed}} routed"
+  become: yes
+
+- name: Enable ufw
   become: yes
   ufw:
     state: enabled
-    policy: deny
